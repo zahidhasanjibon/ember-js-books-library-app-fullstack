@@ -1,0 +1,30 @@
+{{page-title 'Author'}}
+<div class='container'>
+  <h1>Authors</h1>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th scope='col'>Name</th>
+        <th scope='col'>Books</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each @model.authors as |author|}}
+        <tr>
+          <td>
+            <Author::Title @name={{author.name}} @id={{author.id}} />
+          </td>
+          <td>
+            <ul>
+              {{#each author.books as |book|}}
+                <li>{{book.title}}</li>
+              {{/each}}
+            </ul>
+          </td>
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+
+</div>

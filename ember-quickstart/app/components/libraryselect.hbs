@@ -1,0 +1,16 @@
+<select {{on 'change' this.updateLibrary}} class='form-control'>
+  {{#each @libraries as |library|}}
+    <option
+      selected={{checkboolean library.id this.initial.id}}
+      value={{library.id}}
+    >
+      {{library.name}}
+    </option>
+  {{/each}}
+</select>
+
+<button
+  class='btn btn-secondary'
+  type='button'
+  {{on 'click' @hideMenu}}
+>cancel</button>

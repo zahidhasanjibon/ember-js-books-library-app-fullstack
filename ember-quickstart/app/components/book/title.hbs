@@ -1,0 +1,32 @@
+{{#if this.isEditingTitle}}
+
+  <td>
+    <form class='form-inline'>
+      <div class='input-group'>
+        <Input
+          @value={{this.titleValue}}
+          id='ember45'
+          class='ember-text-field ember-view form-control'
+          type='text'
+        />
+        <div class='input-group-btn'>
+          <button
+            {{on 'click' (fn this.saveTitle @id)}}
+            class='btn btn-success'
+            type='button'
+          >Save</button>
+          <button
+            {{on 'click' this.cancelTitle}}
+            class='btn btn-danger'
+            type='button'
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </td>
+
+{{else}}
+  <td {{on 'click' this.editTitle}}> {{@title}}</td>
+{{/if}}

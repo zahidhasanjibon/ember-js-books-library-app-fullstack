@@ -1,0 +1,72 @@
+{{#if this.isAlertShow}}
+  <div class='alert alert-primary' role='alert'>
+    {{@thiss.isAlertShow}}
+  </div>
+{{/if}}
+
+<div id='ember231' class='ember-view'>
+  <div class='well well-sm extra-padding-bottom'>
+    <h3 class='mt-5'>Libraries</h3>
+    <div class='form-inline'>
+      <div class='form-group has-feedback'>
+        <label class='control-label'>Number of new records:</label>
+        <Input
+          @value={{@thiss.libraryNumber}}
+          placeholder='Max 20'
+          id='ember232'
+          class='ember-text-field ember-view form-control'
+          type='number'
+        />
+      </div>
+      <button
+        {{on 'click' (fn @thiss.generateLibraries @thiss.libraryNumber)}}
+        class='btn btn-primary'
+        type='button'
+      >
+        Generate Libraries
+      </button>
+      <button
+        {{on 'click' this.deleteAllLibraries}}
+        class='btn btn-danger pull-right'
+        type='button'
+      >
+        Delete All Libraries
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id='ember233' class='ember-view mt-4'><div
+    class='well well-sm extra-padding-bottom'
+  >
+    <h3>Authors with Books</h3>
+    <div class='form-inline'>
+      <div class='form-group has-feedback'>
+        <label class='control-label'>Number of new records:</label>
+        <Input
+          @value={{@thiss.authorBookNumber}}
+          placeholder='Max 20'
+          id='ember234'
+          class='ember-text-field ember-view form-control'
+          type='number'
+        />
+      </div>
+      <button
+        {{on
+          'click'
+          (fn @thiss.generateBooksAndAuthors @thiss.authorBookNumber)
+        }}
+        class='btn btn-primary'
+        type='button'
+      >
+        Generate Authors with Books
+      </button>
+      <button
+        {{on 'click' this.deleteAllAuthorsANdBook}}
+        class='btn btn-danger pull-right'
+        type='button'
+      >
+        Delete All Authors with Books
+      </button>
+    </div>
+  </div></div>

@@ -1,0 +1,36 @@
+{{page-title 'Index'}}
+
+<div class='container'>
+
+  <div class='btn-toolbar mt-4 mb-3'>
+    <div class='btn-group mr-2'>
+      <a id='ember31' class='active ember-view btn btn-outline-info'>All</a>
+      <a id='ember32' class='ember-view btn btn-outline-info'>Abc</a>
+    </div>
+    <Input
+      @value={{this.query}}
+      placeholder='Filter by library name'
+      id='ember222'
+      class='ember-text-field ember-view form-control col-md-5'
+      type='text'
+    />
+  </div>
+
+  <h2>Lists</h2>
+
+  <div class='mt-4'>
+    <div class='row'>
+
+      <Filter @query={{this.query}} @libraries={{@libraries}} as |results|>
+        {{#each results as |library|}}
+          <Library @library={{library}} />
+
+        {{/each}}
+
+      </Filter>
+
+    </div>
+
+  </div>
+
+</div>

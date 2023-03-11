@@ -1,0 +1,89 @@
+<div class='container'>
+
+  <nav class='navbar navbar-expand-lg navbar-dark' style='background: #34314d;'>
+    <LinkTo @route='index' class='navbar-brand'>Library App</LinkTo>
+    <button
+      class='navbar-toggler'
+      type='button'
+      data-toggle='collapse'
+      data-target='#navbarSupportedContent'
+      aria-controls='navbarSupportedContent'
+      aria-expanded='false'
+      aria-label='Toggle navigation'
+    >
+      <span class='navbar-toggler-icon'></span>
+    </button>
+
+    <div
+      class='collapse navbar-collapse justify-content-between align-items-center'
+      id='navbarSupportedContent'
+    >
+      <ul class='navbar-nav mr-auto'>
+        <li class='nav-item active'>
+          <LinkTo class='p-3' style='color:white;' @route='index'>Home</LinkTo>
+        </li>
+        <li class='nav-item'>
+          <LinkTo
+            class='p-3'
+            style='color:white;'
+            @route='libraries'
+          >Libraries</LinkTo>
+        </li>
+        <li class='nav-item'>
+          <LinkTo
+            class='p-3'
+            style='color:white;'
+            @route='author'
+          >Authors</LinkTo>
+        </li>
+        <li class='nav-item'>
+          <LinkTo style='color:white;' @route='books'>books</LinkTo>
+        </li>
+      </ul>
+      <div style='font-size:16px;'>
+        <ul style='list-style: none;display:flex;align-items:center;'>
+          <li class='nav-item active'>
+            <LinkTo
+              class='p-3'
+              style='color:white;'
+              @route='about'
+            >About</LinkTo>
+          </li>
+          <li class='nav-item active'>
+            <LinkTo style='color:white;' @route='contact'>Contact</LinkTo>
+          </li>
+
+          <li class='nav-item dropdown'>
+            <a
+              style='color:white'
+              class='nav-link dropdown-toggle'
+              href='#'
+              id='navbarDropdown'
+              role='button'
+              data-toggle='dropdown'
+              aria-haspopup='true'
+              aria-expanded='false'
+            >
+              Admin
+            </a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+              <LinkTo
+                class='dropdown-item'
+                @route='admin.invitations'
+              >invitations</LinkTo>
+              <a class='dropdown-item' href='#'>Another action</a>
+              <div class='dropdown-divider'></div>
+              <LinkTo
+                class='dropdown-item'
+                @route='admin.seeder'
+              >seeder</LinkTo>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  {{outlet}}
+</div>

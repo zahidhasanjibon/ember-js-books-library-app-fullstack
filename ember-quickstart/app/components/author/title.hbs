@@ -1,0 +1,32 @@
+{{#if this.isEditingAuthor}}
+
+  <td>
+    <form class='form-inline'>
+      <div class='input-group'>
+        <Input
+          @value={{this.nameValue}}
+          id='ember45'
+          class='ember-text-field ember-view form-control'
+          type='text'
+        />
+        <div class='input-group-btn'>
+          <button
+            {{on 'click' (fn this.saveAuthorName @id)}}
+            class='btn btn-success'
+            type='button'
+          >Save</button>
+          <button
+            {{on 'click' this.cancelAuthorName}}
+            class='btn btn-danger'
+            type='button'
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </td>
+
+{{else}}
+  <td {{on 'click' this.editAuthorName}}> {{@name}}</td>
+{{/if}}

@@ -1,0 +1,44 @@
+{{page-title 'Books'}}
+
+<div class='container'>
+
+  <h1>Books</h1>
+
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+
+        <th scope='col'>Author</th>
+        <th scope='col'>Title</th>
+        <th scope='col'>release Year</th>
+        <th scope='col'>Library</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each @model.books as |book|}}
+        <tr scope='row'>
+          {{!-- <td> {{book.author.name}}</td> --}}
+          <Book::Author
+            @book={{book}}
+            @authors={{this.authors}}
+            @authorName={{book.author.name}}
+            @initial={{book.author}}
+          />
+          <Book::Title @title={{book.title}} @id={{book.id}} />
+
+          <td> {{book.releaseYear}}</td>
+          {{!-- <td> {{book.library.name}}</td> --}}
+          <Book::Library
+            @book={{book}}
+            @libraries={{this.libraries}}
+            @libraryName={{book.library.name}}
+            @initial={{book.library}}
+          />
+        </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+
+</div>

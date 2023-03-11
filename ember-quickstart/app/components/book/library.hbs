@@ -1,0 +1,14 @@
+{{#if this.isEditingLibrary}}
+
+  <td>
+    <Libraryselect
+      @book={{@book}}
+      @libraries={{@libraries}}
+      @hideMenu={{this.cancelLibrary}}
+      @initial={{@initial}}
+    />
+  </td>
+
+{{else}}
+  <td {{on 'click' this.editLibrary}}> {{@libraryName}}</td>
+{{/if}}

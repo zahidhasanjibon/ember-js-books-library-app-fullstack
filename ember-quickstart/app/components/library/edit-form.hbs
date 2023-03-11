@@ -1,0 +1,81 @@
+<div class='container'>
+  <div class='row mt-4'>
+    <div class='col-md-6'>
+      <div id='ember126' class='ember-view'><div class='form-horizontal'>
+          <div class='form-group has-feedback'>
+            <label class='col-sm-2 control-label'>Name*</label>
+
+            <div class='col-sm-10'>
+              <Input
+                @value={{this.name}}
+                placeholder='The name of the Library'
+                id='ember127'
+                class='ember-text-field ember-view form-control'
+                type='text'
+              />
+
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Address</label>
+            <div class='col-sm-10'>
+              <Input
+                @value={{this.address}}
+                placeholder='The address of the Library'
+                id='ember128'
+                class='ember-text-field ember-view form-control'
+                type='text'
+              />
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Phone</label>
+            <div class='col-sm-10'>
+              <Input
+                @value={{this.phone}}
+                placeholder='The phone number of the Library'
+                id='ember129'
+                class='ember-text-field ember-view form-control'
+                type='text'
+              />
+            </div>
+          </div>
+          <div class='form-group'>
+            <div class='col-sm-offset-2 col-sm-10'>
+
+              <button
+                {{on 'click' this.updateLibrary}}
+                class='btn btn-primary'
+                type='submit'
+              >save changes</button>
+
+            </div>
+          </div>
+        </div></div>
+    </div>
+    <div class='col-md-4'>
+      <div class='card h-100'>
+        <div class='card-header'>
+          {{this.name}}
+        </div>
+        <div class='card-body'>
+          <p class='card-text'>Address: {{this.address}} </p>
+          <p class='card-text'>Phone: {{this.phone}}</p>
+        </div>
+        <div class='card-footer'>
+          Number of books:
+          <span class='text-left badge'>
+            0
+          </span>
+          <span class='pull-right'>
+
+            <br />
+
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

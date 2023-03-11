@@ -1,0 +1,33 @@
+<div class='col mb-2 col-12 col-md-4'>
+  <div class='card h-100'>
+    <div class='card-header'>
+      {{@library.name}}
+    </div>
+    <div class='card-body'>
+      <p class='card-text'>Address: {{@library.address}}</p>
+      <p class='card-text'>Phone: {{@library.phone}}</p>
+    </div>
+    <div class='card-footer'>
+      Number of books:
+      <span class='text-left badge'>
+        {{@library.books.length}}
+      </span>
+      <span class='pull-right'>
+
+        <LinkTo
+          @route='libraries.edit'
+          @model={{@library.id}}
+          class='ember-view btn btn-success btn-xs'
+        >Edit</LinkTo>
+        <button
+          {{on 'click' (fn this.removeLibrary @library.id)}}
+          class='btn btn-danger btn-xs'
+          type='button'
+        >Delete
+        </button>
+
+      </span>
+    </div>
+  </div>
+
+</div>

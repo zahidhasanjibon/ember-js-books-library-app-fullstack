@@ -1,0 +1,7 @@
+{{page-title 'About'}}
+about page
+{{log @model.authors}}
+{{#each @model.authors as |author|}}
+  <h2>{{author.name}}</h2>
+{{/each}}
+{{! <Library /> }}

@@ -1,0 +1,14 @@
+{{#if this.isEditingAuthor}}
+
+  <td>
+    <Authorselect
+      @authors={{@authors}}
+      @hideMenu={{this.cancelAuthor}}
+      @book={{@book}}
+      @initial={{@initial}}
+    />
+  </td>
+
+{{else}}
+  <td {{on 'click' this.editAuthor}}> {{@authorName}}</td>
+{{/if}}

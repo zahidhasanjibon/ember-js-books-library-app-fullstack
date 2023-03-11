@@ -1,0 +1,12 @@
+<select {{on 'change' this.updateAuthor}} class='form-control'>
+  {{#each @authors as |author|}}
+    <option
+      selected={{checkboolean author.id this.initial.id}}
+      value={{author.id}}
+    >
+      {{author.name}}
+    </option>
+  {{/each}}
+</select>
+
+<button class='btn btn-secondary' type="button" {{on 'click' @hideMenu}}>cancel</button>
